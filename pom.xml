@@ -10,7 +10,26 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>xzazt-common-center-api</module>
+        <module>xzazt-common-center-web</module>
     </modules>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+    </parent>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>nexus</name>
+            <url>http://localhost:8081/repository/xzazt-group/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>snapshots</name>
+            <url>http://localhost:8081/repository/xzazt-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
