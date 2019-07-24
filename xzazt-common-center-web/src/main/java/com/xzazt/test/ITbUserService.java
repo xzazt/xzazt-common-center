@@ -1,4 +1,4 @@
-package com.xzazt.service;
+package com.xzazt.test;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;

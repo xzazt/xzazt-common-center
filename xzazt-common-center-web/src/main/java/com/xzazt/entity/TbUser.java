@@ -1,11 +1,10 @@
 package com.xzazt.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
-import java.io.Serializable;
+
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -16,9 +15,9 @@ import java.time.LocalDateTime;
  * @since 2019-07-10
  */
 @Data
-public class TbUser implements Serializable{
+public class TbUser{
 
-    private static final long serialVersionUID = 1L;
+    private String id;
 
     /**
      * 登录名称
@@ -53,7 +52,7 @@ public class TbUser implements Serializable{
     /**
      * 创建时间
      */
-    private LocalDateTime rowCreateTime;
+    private Date rowCreateTime;
 
     /**
      * 修改人
@@ -63,7 +62,7 @@ public class TbUser implements Serializable{
     /**
      * 修改时间
      */
-    private LocalDateTime rowMofifyTime;
+    private Date rowModifyTime;
 
 
 }

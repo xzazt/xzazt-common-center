@@ -1,13 +1,17 @@
 package com.xzazt.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xzazt.bean.ResultDTO;
 import com.xzazt.constant.ErrorCode;
-import com.xzazt.service.ITbUserService;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import com.xzazt.entity.TbUser;
+import com.xzazt.test.ITbUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * <p>
@@ -21,14 +25,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TbUserController{
 
-    @AutoConfigureOrder
+    @Autowired
     private ITbUserService tbUserService;
 
     @GetMapping("/get")
-    public ResultDTO<String> getUser(){
-        ResultDTO<String> resultDTO = new ResultDTO<>();
+    public ResultDTO<List<TbUser>> getUser(){
+        ResultDTO<List<TbUser>> resultDTO = new ResultDTO<>();
         resultDTO.setCode(ErrorCode.START_CODE);
-        resultDTO.setData("success!!!");
+        QueryWrapper<TbUser> qw = new QueryWrapper<>();
+        qw.eq("row_state",1);
+
+        List<TbUser> list = tbUserService.list(qw);
+        resultDTO.setData(list);
         return resultDTO;
         //tbUserService.list()
     }

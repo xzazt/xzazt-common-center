@@ -1,10 +1,10 @@
-package com.xzazt.service.impl;
+package com.xzazt.test.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xzazt.entity.TbUser;
 import com.xzazt.mapper.TbUserMapper;
-import com.xzazt.service.ITbUserService;
+import com.xzazt.test.ITbUserService;
 import org.springframework.stereotype.Service;
 
 /**
